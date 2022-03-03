@@ -114,3 +114,12 @@
     flex-direction: column;
   }
 }
+
+
+.outer-container {
+  margin: 1rem;
+}
+
+.players-container {
+  padding: 1rem
+}
