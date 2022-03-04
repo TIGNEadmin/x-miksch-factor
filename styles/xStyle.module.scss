@@ -1,0 +1,81 @@
+.main {
+    width: 100vw;
+    min-height: 100vh;
+}
+
+.gameActive {
+    background: #e0e0e5;
+}
+
+.gameOver {
+    background: red !important;
+}
+
+.info {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+        font-size: 5rem;
+        padding-top: 2rem;
+        text-align: center;
+    }
+
+    h2 {
+        margin: 1rem auto;
+    }
+}
+
+.playersContainer {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-top: 5rem;
+}
+
+.playerContainer {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow:  20px 20px 60px #bebebe,
+                 -20px -20px 60px #ffffff;
+    padding: 2rem;
+    min-width: 300px;
+    min-height: 300px;
+}
+
+.name {
+    color: rgb(66, 66, 66);
+    font-size: 3rem;
+    margin-top: 0;
+    max-width: 300px;
+    text-align: center
+}
+
+.svgStyle {
+    fill: #fff;
+    width: 200px;
+    height: 200px;
+    transition: all 1000ms ease;
+}
+
+.active {
+    fill: red;
+    transition: all 1000ms ease;
+    width: 200px;
+    height: 200px;
+}
+
+.newRoundButton {
+    font-size: 2rem;
+    margin: 2rem;
+}
