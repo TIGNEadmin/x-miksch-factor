@@ -29,7 +29,7 @@ function submitX(name) {
     }
   }
   var writeData = JSON.stringify(players);
-  fs.writeFileSync("./data/players.json", writeData);
+  fs.writeFileSync("./tmp/players.json", writeData);
 }
 
 function addPlayer(player) {
@@ -39,7 +39,7 @@ function addPlayer(player) {
     if (player.name != undefined) {
       players.push(player);
       var writeData = JSON.stringify(players);
-      fs.writeFileSync("./data/players.json", writeData);
+      fs.writeFileSync("./tmp/players.json", writeData);
     }
   }
 }
@@ -54,7 +54,7 @@ function deletePlayer(name) {
   // }
 
   var writeData = JSON.stringify(players);
-  fs.writeFileSync("./data/players.json", writeData);
+  fs.writeFileSync("./tmp/players.json", writeData);
 }
 
 function newRound() {
@@ -62,11 +62,11 @@ function newRound() {
     player.x = false;
   });
   var writeData = JSON.stringify(players);
-  fs.writeFileSync("./data/players.json", writeData);
+  fs.writeFileSync("./tmp/players.json", writeData);
 }
 
 function deleteAll() {
   players = [];
   var writeData = JSON.stringify(players);
-  fs.writeFileSync("./data/players.json", writeData);
+  fs.writeFileSync("./tmp/players.json", writeData);
 }

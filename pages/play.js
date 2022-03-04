@@ -4,9 +4,9 @@ import styles from "../styles/xStyle.module.scss";
 import Xsvg from "../public/x-symbol-svgrepo-com.svg";
 import { useContext, useEffect, useState } from "react";
 import { usePlayerContext } from "../PlayerProvider";
-import { playerActions } from "../data/players-crud";
+import { playerActions } from "../tmp/players-crud";
 import useSound from "use-sound";
-import TestPlayers from "../data/myData";
+import TestPlayers from "../tmp/myData";
 
 import buzzer from "../public/wrong-answer-sound-effect.mp3";
 

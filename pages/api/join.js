@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import { playerActions } from "../../data/players-crud";
+import { playerActions } from "../../tmp/players-crud";
 
 export default function handler(req, res) {
   const { getAll, addPlayer } = playerActions;
