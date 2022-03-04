@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <h1>Velkommen til "Kan Miksch holde takten"</h1>
+      <h1>Velkommen til Kan Miksch holde takten</h1>
       <input
         placeholder="Navn"
         onChange={handleChange}
