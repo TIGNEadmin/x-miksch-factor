@@ -1,9 +1,12 @@
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 import styles from "../../styles/player.module.scss";
 
 import Image from "next/image";
 
 export default function Dashboard() {
+  const router = useRouter();
+
   // if (process.browser) {
   //   window.addEventListener("beforeunload", (ev) => {
   //     ev.preventDefault();
