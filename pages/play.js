@@ -54,7 +54,7 @@ export default function Home() {
 
   useEffect(() => {
     var counter = 1;
-    var limit = Math.floor(players.length / 2);
+    var limit = Math.ceil(players.length / 2);
 
     players.map((player) => {
       if (player.x == true) {
@@ -66,8 +66,6 @@ export default function Home() {
       setGameOver(true);
       console.log("GameOVER!");
     }
-    console.log("Counter", counter);
-    console.log("limit: ", limit);
   }, [setPlayers]);
 
   // useEffect(() => {
