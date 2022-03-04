@@ -36,16 +36,22 @@ function addPlayer(player) {
   if (players.some((e) => e.name === player.name)) {
     console.log("That name exists");
   } else {
-    players.push(player);
-    var writeData = JSON.stringify(players);
-    fs.writeFileSync("./data/players.json", writeData);
+    if (player.name != undefined) {
+      players.push(player);
+      var writeData = JSON.stringify(players);
+      fs.writeFileSync("./data/players.json", writeData);
+    }
   }
 }
 
 function deletePlayer(name) {
-  if (players.some((e) => e.name === player.name)) {
-    players.pop(player);
-  }
+  console.log("Name from func: ", name);
+
+  players = players.filter((player) => player.name !== name);
+
+  // if (players.some((e) => e.name === name)) {
+  //   players.pop(e);
+  // }
 
   var writeData = JSON.stringify(players);
   fs.writeFileSync("./data/players.json", writeData);

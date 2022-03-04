@@ -1,0 +1,27 @@
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+
+    h1 {
+        margin: .2rem;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    input {
+        font-size: inherit;
+        margin: 1rem;
+    }
+
+    button {
+        font-size: inherit;
+        padding: .5rem 1rem;
+    }
+}
+

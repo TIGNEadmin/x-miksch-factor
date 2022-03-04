@@ -1,6 +1,6 @@
-.main {
+.outer {
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
 }
 
 .gameActive {
@@ -22,10 +22,11 @@
         font-size: 5rem;
         padding-top: 2rem;
         text-align: center;
+        margin: 0 auto;
     }
 
     h2 {
-        margin: 1rem auto;
+        margin: .5rem auto;
     }
 }
 
@@ -33,9 +34,12 @@
     display:flex;
     flex-direction: row;
     justify-content: center;
+    align-items:center;
     flex-wrap: wrap;
     margin: 0;
-    padding-top: 5rem;
+    padding-top: 2rem;
+    height: 100%;
+    width: 100%;
 }
 
 .playerContainer {
@@ -49,33 +53,36 @@
     box-shadow:  20px 20px 60px #bebebe,
                  -20px -20px 60px #ffffff;
     padding: 2rem;
-    min-width: 300px;
-    min-height: 300px;
+    max-width: 250px;
+}
+
+.redBorder {
+    border: 2px solid red;
 }
 
 .name {
     color: rgb(66, 66, 66);
-    font-size: 3rem;
+    font-size: 2rem;
     margin-top: 0;
-    max-width: 300px;
     text-align: center
 }
 
 .svgStyle {
     fill: #fff;
-    width: 200px;
-    height: 200px;
-    transition: all 1000ms ease;
+    width: 70%;
+    transition: all 300ms ease;
 }
 
 .active {
     fill: red;
-    transition: all 1000ms ease;
-    width: 200px;
-    height: 200px;
+    transition: all 300ms ease;
+    // width: 200px;
+    // height: 200px;
 }
 
 .newRoundButton {
     font-size: 2rem;
     margin: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
 }
