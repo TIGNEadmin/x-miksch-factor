@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from "react";
 import { usePlayerContext } from "../PlayerProvider";
 import { playerActions } from "../data/players-crud";
 import useSound from "use-sound";
+import TestPlayers from "../data/myData";
 
 import buzzer from "../public/wrong-answer-sound-effect.mp3";
 
@@ -37,6 +38,7 @@ export default function Home() {
 
   function updatePlayers() {
     var newPlayers = playerActions.getAll();
+    // var newPlayers = TestPlayers;
     // console.log("These are the updated players: ", newPlayers);
 
     soundBuzzer(players, newPlayers);
