@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-const nextConfig = {
-  reactStrictMode: true,
+const withPlugins = require("next-compose-plugins");
 
+const nextConfig = {
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
@@ -24,5 +24,8 @@ const nextConfig = {
     return config;
   },
 };
+const { withKeystone } = require("@keystone-6/core/next");
 
-module.exports = nextConfig;
+module.exports = withKeystone(nextConfig, {
+  reactStrictMode: true,
+});
