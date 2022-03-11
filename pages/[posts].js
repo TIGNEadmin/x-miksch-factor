@@ -2,7 +2,7 @@ import useRouter from "next/router";
 import { query } from ".keystone/api";
 import { Lists } from ".keystone/types";
 import { KeystoneContext } from "@keystone-6/core/types";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Posts(posts) {
   //   useEffect(async () => {
@@ -10,14 +10,48 @@ export default function Posts(posts) {
   //     console.log("My data:", data);
   //   }, []);
 
+  const [data, setData] = useState();
+
   async function getData() {
-    const data = await KeystoneContext.query.Post.findMany({
-      query: "id title",
+    const res = await fetch("/api/graphql", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `{
+          posts {
+            id title
+          }
+        }`,
+      }),
     });
-    console.log("My data:", data);
+    const posts = await res.json();
+    console.log(await posts);
   }
 
-  getData();
+  async function addPlayer() {
+    const res = await fetch("/api/graphql", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `mutation {
+            createPost(data: {
+              title: "Super Newest, coolest title",
+              content: "Super Newest, coolest content",
+              slug: "superslug"
+            }) {
+              id title
+            }
+          }`,
+      }),
+    });
+    const posts = await res.json();
+    console.log(await posts);
+    // setData(res);
+  }
 
   function createPost(post) {
     return (
@@ -34,6 +68,8 @@ export default function Posts(posts) {
         {posts.posts.map((post) => {
           return createPost(post);
         })}
+        <button onClick={getData}>Mybutton</button>
+        <button onClick={addPlayer}>Add</button>
       </>
     );
   } else {
