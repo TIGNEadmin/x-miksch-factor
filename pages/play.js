@@ -8,6 +8,9 @@ import { playerActions } from "../tmp/players-crud";
 import useSound from "use-sound";
 import TestPlayers from "../tmp/myData";
 
+let imp_db = require("../sqlite_example");
+let db = imp_db.db;
+
 import buzzer from "../public/wrong-answer-sound-effect.mp3";
 
 export default function Home() {
@@ -166,6 +169,15 @@ export default function Home() {
                 }}
               >
                 Fjern spiller
+              </button>
+              <button
+                onClick={() => {
+                  e.preventDefault();
+
+                  console.log("This is the db:", db);
+                }}
+              >
+                Sqlite
               </button>
             </form>
           </div>

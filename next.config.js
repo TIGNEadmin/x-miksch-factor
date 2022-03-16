@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 
+let imp_db = require("./sqlite_example");
+
+let db = imp_db.db;
+
 const nextConfig = {
   reactStrictMode: true,
 
@@ -20,6 +24,13 @@ const nextConfig = {
       // by next.js will be dropped. Doesn't make much sense, but how it is
       fs: false, // the solution
     };
+    config.plugins.push({
+      apply: (compiler) => {
+        compiler.hooks.afterEmit.tap("AfterEmitPlugin", (compilation) => {
+          console.log(db);
+        });
+      },
+    });
 
     return config;
   },
